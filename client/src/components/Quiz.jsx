@@ -6,6 +6,7 @@ export default function Quiz({ onFinish }) {
   const [answers, setAnswers] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [result, setResult] = useState(null);
 
   useEffect(() => {
     apiGet("/theory/quiz").then((data) => {
@@ -24,11 +25,18 @@ export default function Quiz({ onFinish }) {
     return res.user._id;
   };
 
+  const optionText = (qid, key) => {
+    const q = quiz.find((item) => item.id === qid);
+    const opt = q?.options.find((o) => o.key === key);
+    return opt ? `${opt.key}. ${opt.text}` : key || "未作答";
+  };
+
   const submit = async () => {
     try {
       setError("");
       const userId = await ensureUserId();
       const res = await apiPost("/theory/submit", { userId, answers });
+      setResult(res);
       onFinish?.(res);
     } catch (e) {
       setError("提交失败，请确认后端已运行。");
@@ -56,9 +64,26 @@ export default function Quiz({ onFinish }) {
           </div>
         </div>
       ))}
-      <button className="btn" onClick={submit}>提交理论考察</button>
+      <button className="btn" onClick={submit}>提交理论考试</button>
       {error && <div>{error}</div>}
+
+      {result?.details && (
+        <div className="card">
+          <strong>解析与答案</strong>
+          <div style={{ marginTop: 8 }}>
+            {result.details.map((d) => (
+              <div key={d.id} style={{ marginTop: 12, paddingTop: 8, borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+                <div><strong>{d.title}</strong></div>
+                <div style={{ marginTop: 6 }}>你的答案：{optionText(d.id, d.chosen)}</div>
+                <div>正确答案：{optionText(d.id, d.correct)}</div>
+                <div style={{ marginTop: 6, opacity: 0.85 }}>解析：{d.explain}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
 

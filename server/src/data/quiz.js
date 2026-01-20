@@ -8,7 +8,8 @@ export const quiz = [
       { key: "C", text: "上火星" },
       { key: "D", text: "写道歉信" }
     ],
-    answer: "A"
+    answer: "A",
+    explain: "孙学核心价值观：撒币=注意力引擎，传播效率最大化。"
   },
   {
     id: "q2",
@@ -19,7 +20,8 @@ export const quiz = [
       { key: "C", text: "声称要救活贾跃亭" },
       { key: "D", text: "以上都是" }
     ],
-    answer: "D"
+    answer: "D",
+    explain: "孙学把商业与行为艺术深度融合，三者都是经典案例。"
   },
   {
     id: "q3",
@@ -30,7 +32,8 @@ export const quiz = [
       { key: "C", text: "打电话给巴菲特求助" },
       { key: "D", text: "先问司机是否接受TRX支付" }
     ],
-    answer: "D"
+    answer: "D",
+    explain: "加密信仰+现实梗：危机时先确认能否用TRX结算。"
   },
   {
     id: "q4",
@@ -41,7 +44,8 @@ export const quiz = [
       { key: "C", text: "让所有人开始讨论你" },
       { key: "D", text: "让巴菲特回复你的推特" }
     ],
-    answer: "C"
+    answer: "C",
+    explain: "撒币本质是注意力经济工具，目标是引发讨论。"
   },
   {
     id: "q5",
@@ -52,7 +56,8 @@ export const quiz = [
       { key: "C", text: "火星需要建设波场节点" },
       { key: "D", text: "椰子鸡在火星上市" }
     ],
-    answer: "B"
+    answer: "B",
+    explain: "孙学强调跨境生存艺术：压力来临就转场。"
   },
   {
     id: "q6",
@@ -63,7 +68,8 @@ export const quiz = [
       { key: "C", text: "拍卖自己的灵魂上链" },
       { key: "D", text: "以上皆可" }
     ],
-    answer: "D"
+    answer: "D",
+    explain: "孙学鼓励创造性实践：只要传播性强，皆可孙学化。"
   },
   {
     id: "q7",
@@ -74,7 +80,8 @@ export const quiz = [
       { key: "C", text: "重要事件总在半夜宣布" },
       { key: "D", text: "以上都是" }
     ],
-    answer: "D"
+    answer: "D",
+    explain: "孙学时空观反常规，弹性又刺激。"
   },
   {
     id: "q8",
@@ -85,7 +92,8 @@ export const quiz = [
       { key: "C", text: "道歉递归定律" },
       { key: "D", text: "椰子鸡真香定律" }
     ],
-    answer: "A"
+    answer: "A",
+    explain: "热度从不守恒，只能持续制造。"
   },
   {
     id: "q9",
@@ -96,7 +104,8 @@ export const quiz = [
       { key: "C", text: "把糖饼做成椰子鸡形状" },
       { key: "D", text: "以上都会" }
     ],
-    answer: "D"
+    answer: "D",
+    explain: "孙学实践讲究多线程操作，全部同时上。"
   },
   {
     id: "q10",
@@ -107,6 +116,8 @@ export const quiz = [
       { key: "C", text: "随机选择并坚信不疑" },
       { key: "D", text: "询问他的父亲" }
     ],
-    answer: "C"
+    answer: "C",
+    explain: "孙学是量子行为艺术，不可预测性是第一原则。"
   }
 ];
+
